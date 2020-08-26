@@ -1,29 +1,63 @@
+
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+  <div id="perspective" class="perspective effect-airbnb modalview " *ngIf="isLogin">
+    <div class="main-wrapper">
+      <div class="main-content"  >
+        <header class="bg-white style2 pt-2 pb-0 bg-home">
+          <div class="row">
+            <div class="col-sm-4 text-left pos-top">
+              <a style="cursor: pointer;" class="menu-btn mt-0" id="sidebar-right" (click)="openSidebar()"><span></span></a>
+            </div>
+            <div class="col-sm-4 text-center pos-top">
+              <a href="#" class="logo d-block mt-1"><img src="../../assets/images/logo.png" alt=""></a>
+            </div>              
+          </div>
+        </header>
+        <ion-router-outlet id="main-content" style="position: inherit !important;"></ion-router-outlet>
+      </div>
+      <nav class="navigation style7 style1">
+        <div class="container pl-0 pr-0">
+          <div class="nav-content">
+            <ul>
+              <li><a href="#" class="nav-content-bttn" data-tab="friends"><i class="ti-search"></i></a></li>
+              <li><a (click)="test()" class="nav-content-bttn" data-tab="chats"><i class="ti-user"></i></a></li>
+              <li><a href="shop-home.html" class="nav-content-bttn nav-center" data-tab="favorites"><i class="ti-plus"></i></a></li>
+              <li><a href="chat.html" class="nav-content-bttn" data-tab="favorites"><i class="ti-comments"></i></a></li>
+              <li><a href="components.html" data-tab="archived" class="nav-content-bttn "><i class="ti-package"></i></a></li>						
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <nav class="outer-nav left vertical ">
+      <header class="bg-tranparent style2 mt-3 pb-0 bg-home">
+        <div class="row">
+          <div class="col-sm-4 text-left pos-top">
+            <a style="cursor: pointer;" class="menu-btn mt-0" id="close-sidebar" (click)="closeSidebar()"></a>
+          </div>
+          <div class="col-sm-4 text-center pos-top">
+            <a href="#" class="logo d-block mt-1"><img src="../../assets/images/logo-white.png" alt=""></a>
+          </div>
+        
+        </div>
+      </header>
+      <ul class="nav-item"> 
+        <li class="menu-text text-left">
+          <img src="https://via.placeholder.com/100x100.png" alt="user">
+          <h4>Alice Maghyn</h4>
+          <i>Flodia California</i>
+        </li>
+        <li><a routerDirection="root" [routerLink]="['/home']"><i class="ti-location-arrow"></i>Inicio</a></li>
+        <li><a routerDirection="root" [routerLink]="['/category']"><i class="ti-server"></i>Categorias</a></li>
+        <li><a href="shop-wishlist.html"><i class="ti-star"></i>Servicios</a></li>
+        <li><a href="#"><i class="ti-package"></i>Perfil</a></li>
+        <li><a (click) = "logOut()"><i class="ti-lock"></i>Salir</a></li>
+        
+      </ul>
+    </nav>
+  </div>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
+  <ion-router-outlet id="main-content" style="position: inherit !important;" *ngIf="isLogin == null"></ion-router-outlet>
+          
 </ion-app>
+

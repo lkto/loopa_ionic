@@ -1,0 +1,30 @@
+<ion-app>
+  <ion-content>
+    <main class="bg-degradado bg-white bg-cover" >
+      <div class="d-flex align-items-center mx-auto vertical-form">
+        <div class="container">
+          <div class="card bg-tranparent">
+            <div class="card-body p-2 ">
+              <form>
+                <div >
+                  <img class="img-logo" src="../../assets/images/logo-login.png">
+                </div>
+                <p class="text-center p-color">Ingrese su dirección de correo electrónico en este campo para recuperar su contraseña.</p>
+							<div class="input-group mb-3 bg-white">
+                <i class="ti-email"></i>
+                <input class="form-control form-control-lg" id="password" type="Email" placeholder="Email" required="">
+                </div>
+                
+                <button class="btn btn-block btn-lg btn-primary mt-2" ><b>Recuperar Contraseña</b></button>
+                <a class="btn btn-block btn-lg btn-warning mt-0"  routerDirection="root" [routerLink]="['/login']" ><b>Cancelar</b></a>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </ion-content>
+</ion-app>
+
+

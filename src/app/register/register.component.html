@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-content>
+    <main class="bg-degradado bg-white bg-cover" >
+      <div class="d-flex align-items-center mx-auto vertical-form">
+        <div class="container">
+          <div class="card bg-tranparent">
+            <div class="card-body p-2 ">
+              <form>
+                <div >
+                  <img class="img-logo" src="../../assets/images/logo-login.png">
+                </div>
+                <h4 class="text-center title-text mb-3 text-white">Regístrate</h4>
+                <div class="input-group mb-3 bg-white">
+                  <i class="ti-user"></i>
+                  <input class="form-control form-control-lg" id="username" type="text" placeholder="Usurio">
+                </div>
+                <div class="input-group mb-3 bg-white">
+                  <i class="ti-email"></i>
+                  <input class="form-control form-control-lg" id="password" type="password" placeholder="Email" >
+                </div>
+                <div class="input-group mb-3 bg-white">
+                  <i class="ti-lock"></i>
+                  <input class="form-control form-control-lg" id="password" type="password" placeholder="Contraseña" >
+                </div>
+                <button class="btn btn-block btn-lg btn-primary mt-0" (click)="register()" ><b>REGISTRO</b></button>
+			          <p class="mt-4 text-center text-grey2">¿Ya tienes cuenta?<a class="link-primary text-white fw-600" routerDirection="root" [routerLink]="['/login']">Inicia sesion</a>.</p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </ion-content>
+</ion-app>
+
+

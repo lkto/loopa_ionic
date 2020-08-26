@@ -1,0 +1,36 @@
+<ion-app>
+  <ion-content>
+    <main class="bg-degradado bg-white bg-cover" >
+      <div class="d-flex align-items-center mx-auto vertical-form">
+        <div class="container">
+          <div class="card bg-tranparent">
+            <div class="card-body p-2 ">
+              <form>
+                <div >
+                  <img class="img-logo" src="../../assets/images/logo-login.png">
+                </div>
+                <div class="input-group mb-3 mt-3 bg-white">
+                  <i class="ti-user"></i>
+                  <input class="form-control form-control-lg" id="username" type="text" placeholder="Usuario">
+                </div>
+                <div class="input-group mb-3 bg-white">
+                  <i class="ti-lock"></i>
+                  <input class="form-control form-control-lg" id="password" type="password" placeholder="Contraseña" required="">
+                </div>
+                <a class="link-primary text-white" routerDirection="root" [routerLink]="['/resseting']" >¿Se te olvidó tu contraseña?</a>
+			          <a class="btn btn-block btn-lg btn-primary mt-2" type="submit" (click)="login()">INICIAR</a>
+                <p class="mt-4 text-center text-grey2">¿No tienes cuenta? <a class="link-primary text-white fw-600" routerDirection="root" [routerLink]="['/register']" >Regístrate</a>.</p>
+                <div style="text-align: center;">
+                  <a href=""><i style="font-size: 35px;"  class="ti-facebook icon_facebook"></i></a>
+                  <a href=""><i style="font-size: 35px;" class="ti-google icon_google"></i></a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </ion-content>
+</ion-app>
+
+
